@@ -1,0 +1,35 @@
+ls --all ~/.ssh - bu kod ssh keyimizin olub olmadiqini yoxlayir
+C:\Users\hp>ls --all ~/.ssh
+.  ..  id_ed25519  id_ed25519.pub  known_hosts
+ssh-keygen -t ed25519 -C "vaqiff@internet.ru" - bu kod ise yazdiqimiz epoctu etiket kimi istifade ederek yeni ssh acari yaradir bu kodu yazandan sonra ise cmd bize bele bir cavab gosterir
+C:\Users\hp>ssh-keygen -t ed25519 -C "vaqiff@internet.ru"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/hp/.ssh/id_ed25519):
+/c/Users/hp/.ssh/id_ed25519 already exists.
+Overwrite (y/n)?
+Enter passphrase (empty for no passphrase): ---burada enter vururuq
+Enter same passphrase again: ---hemcinin buradada 
+Your identification has been saved in /c/Users/hp/.ssh/id_ed25519
+Your public key has been saved in /c/Users/hp/.ssh/id_ed25519.pub --bize lazim olan ssh key burdadir /c/Users/hp/.ssh/id_ed25519.pub bu pub faylinin icinde
+The key fingerprint is:
+SHA256:TqaS37fEt3Z2KDiWKAnZ62dDfqrAjiG+O0BPCTKiTyg vaqiff@internet.ru
+The key's randomart image is:
++--[ED25519 256]--+
+|                 |
+|+.               |
+|+o. .            |
+|E..o             |
+|ooo  o  S        |
+|. .oo..=..       |
+|o . =..=..oo.  . |
+|.o + ++.*.B.o.+ .|
+| += ..+=o*.+.+ . |
++----[SHA256]-----+
+mende halhazirda bu ssh key oldugu ucun onu yeniden uzerine yazir ssh keyimiz hazirdir indi onu pub faylindan copy edib github/settings icerisindeki add new ssh key labeline elave edirik ve ssh connection artiq hazirdir.
+indi biz asanliqla cmdden gite repositery push ede bilerik.
+gitdeki ssh connectionun yoxlanilmasi asaqidaki kod ile heyata kecirilir:
+C:\Users\hp>ssh -T git@github.com
+netice olaraq bunlar gelmelidir eger connection movcuddursa bu cixisi goreceksiniz:
+Hi fvaqifgithub! You've successfully authenticated, but GitHub does not provide shell access.
+bu o demekdir siz ssh connectionunuz isleyir
+
