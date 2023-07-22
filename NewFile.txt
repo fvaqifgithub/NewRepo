@@ -1,1 +1,3 @@
 "Checkout ucun yoxlama"
+saat 18:23 
+novbeti test cmd ile gite repositery push etmek
